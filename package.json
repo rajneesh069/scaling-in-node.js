@@ -1,10 +1,12 @@
 {
-  "name": "horizontal-scaling",
+  "name": "horizontal-and-vertical-scaling",
   "version": "1.0.0",
   "description": "This folder is for demonstrating horizontal scaling code and also tells about it in README.md plus the shortcomings of vertical scaling for Node.js processes.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc && node dist/index.js",
+    "build": "tsc -b"
   },
   "keywords": [
     "horizontal-scaling",
@@ -16,5 +18,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
   }
 }
