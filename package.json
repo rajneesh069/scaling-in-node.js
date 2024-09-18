@@ -1,0 +1,20 @@
+{
+  "name": "horizontal-scaling",
+  "version": "1.0.0",
+  "description": "This folder is for demonstrating horizontal scaling code and also tells about it in README.md plus the shortcomings of vertical scaling for Node.js processes.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "horizontal-scaling",
+    "scaling",
+    "vertical-scaling",
+    "node.js"
+  ],
+  "author": "Rajneesh Mishra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
