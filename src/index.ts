@@ -13,18 +13,19 @@ if (cluster.isPrimary) {
   log(`Primary ${process.pid} is running.`);
 
   for (let i = 0; i < totalCPUs; i++) {
-    cluster.fork();
+    cluster.fork(); // it forks the original process, creates a new child process and isPrimary for that
+    // chid process is false, which makes the else part to run hence starting multiple child processes.
   }
 
   cluster.on("exit", (worker, code, signal) => {
     log(`worker ${worker.process.pid} went down.`);
     log(`let's fork another one!`);
-    cluster.fork();
+    cluster.fork(); 
     // or you can exit the parent process itself by using: process.exit(1);
   });
 } else {
   const app = express();
-
+  log(`Worker ${process.pid} started`); // child process of the primary process, i.e., the parent
   app.get("/", async (req: Request, res: Response) => {
     return res.json({ message: "Hello World" }).status(200);
   });
